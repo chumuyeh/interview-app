@@ -12,7 +12,6 @@ export async function parseEmployeesCsv(filePath: string): Promise<Employee[]> {
             console.log(data.data);
             const employees: Employee[] = [];
             for (let employee of data.data) {
-                const uuid = uuidv4();
                 const newEmployee: Employee = { id: uuidv4(), firstName: employee[0], lastName: employee[1], jobTitle: employee[3], birthday: employee[2] }
                 employees.push(newEmployee);
             }

@@ -24,15 +24,15 @@ export default function AddEmployeeForm() {
     } else {
       return false;
     }
-  }, [firstName, lastName, jobTitle, birthday])
+  }, [firstName, lastName, jobTitle, birthdayValid, firstNameValid, jobTitleValid, lastNameValid])
 
   const onSubmitEmployee = React.useCallback(() => {
     if (inputsValid) {
       dispatch(addEmployee({ id: uuidv4(), firstName: firstName, lastName: lastName, jobTitle: jobTitle, birthday: birthday }))
     } else {
-      alert("The employee could not be created due to an invalid or empty field.");
+      window.alert("The employee could not be created due to an invalid or empty field.");
     }
-  }, [firstName, lastName, birthday, jobTitle, birthday, inputsValid])
+  }, [dispatch, firstName, lastName, birthday, jobTitle, inputsValid])
 
 
   React.useEffect(() => {

@@ -1,6 +1,6 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Employee } from '../util/Types';
-import { RootState, AppThunk } from './store';
+import { RootState } from './store';
 
 export interface EmployeeState {
   employees: Employee[];

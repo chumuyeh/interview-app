@@ -48,11 +48,13 @@ describe('AddEmployeeForm tests', () => {
     expect(employees[0].jobTitle).toEqual(jobTitleTestValue);
   });
 
-  it('does not submit the valid in puts', () => {
+  it('does not submit the invalid inputs', () => {
     const firstNameTestValue = "0000";
     const lastNameTestValue = "TestLastName";
     const jobTitleTestValue = "TestJobTitle";
     const component = render(<Provider store={store}><AddEmployeeForm /></Provider>);
+
+    window.alert = () => { };
 
     const firstNameInput = component.getByTestId('firstName');
     const lastNameInput = component.getByTestId('lastName');
